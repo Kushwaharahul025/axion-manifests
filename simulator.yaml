@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simulator-service
+  labels:
+    app: simulator-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simulator-service
+  template:
+    metadata:
+      labels:
+        app: simulator-service
+    spec:
+      containers:
+        - name: simulator-service
+          image: rahulacr12.azurecr.io/simulator:v1
+          
+          
+         

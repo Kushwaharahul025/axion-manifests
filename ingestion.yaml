@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: axion-ingestion-service
+  labels:
+    app: axion-ingestion-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: axion-ingestion-service
+  template:
+    metadata:
+      labels:
+        app: axion-ingestion-service
+    spec:
+      containers:
+        - name: axion-ingestion-service
+          image: rahulacr12.azurecr.io/ingestnew:v1
+          ports:
+            - containerPort: 8000
+          
+         

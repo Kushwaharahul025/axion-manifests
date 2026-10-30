@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: axion-telemetry
+  labels:
+    app: axion-telemetry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: axion-telemetry
+  template:
+    metadata:
+      labels:
+        app: axion-telemetry
+    spec:
+      containers:
+        - name: axion-telemetry
+          image: rahulacr12.azurecr.io/telemetry:v1
+          ports:
+            - containerPort: 8000
+          
+         
